@@ -7,7 +7,7 @@ const pokemons = ref([])
 const router = useRouter()
 
 const fetchPokemons = async () => {
-  const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20')
+  const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=1301')//exiten 101 pokemones
   const results = res.data.results
 
   // Obtener detalles para cada Pokémon
@@ -42,24 +42,47 @@ const goToDetail = (id) => {
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
   padding: 2rem;
+  background: linear-gradient(to bottom, #f2f2f2, #e8f0ff);
+  min-height: 100vh;
 }
+
 .card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1rem;
+  background: white;
+  border: 2px solid #d0d0d0;
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
+
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: #ffcb05; /* amarillo tipo pokebola */
 }
+
 .card img {
-  width: 96px;
-  height: 96px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+
+.card h3 {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #2b2b2b;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
 }
 </style>
+

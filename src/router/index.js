@@ -10,7 +10,7 @@ const routes = [
   },
   {
     path: '/pokemon/:id',
-    name: 'PokemonDetail',
+    name: 'PostDetail',
     component: PostDetail
   }
 ]
