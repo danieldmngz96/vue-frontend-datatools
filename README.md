@@ -25,3 +25,14 @@ npm install
 
 # Ejecutar en modo desarrollo
 npm run dev
+├── src
+│   ├── assets         # Archivos estáticos como imágenes o estilos globales
+│   ├── components     # Componentes reutilizables (como tarjetas)
+│   ├── views          # Vistas asociadas a rutas (Lista y Detalle)
+│   ├── router         # Configuración de rutas con vue-router
+│   ├── App.vue        # Componente raíz
+│   └── main.js        # Punto de entrada principal
+graph TD
+  A[Inicio] --> B[Listado de Pokémon]
+  B --> C[Click en tarjeta]
+  C --> D[Detalle del Pokémon]
